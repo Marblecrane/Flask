@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crane Applicants</title>
+</head>
+
+<style>
+    body{
+        background-image: url('../static/20231030.jpg'); 
+        background-size: fill;
+        background-repeat: no-repeat;
+        background-position: center;
+        font-family: Arial, sans-serif;
+    }
+
+    table{
+        border: 3px;
+    }
+</style>
+
+<body>
+    <h1>Applicants Page.</h1>
+    <p>The last employees entered have a total salary of : ${{ total_salary }}</p>
+
+    <h2>Employee Details</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Position</th>
+                <th>Age</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+                <tr>
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.email }}</td>
+                    <td>{{ employee.position }}</td>
+                    <td>{{ employee.age }}</td>
+                    <td>${{ employee.salary }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <footer>
+        <p>Thank you for submitting your application.</p><br>
+        <p>In the case of your successful application you will hear from us in the near future.</p>
+    </footer>
+</body>
+</html>

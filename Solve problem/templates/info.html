@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crane Enterprise</title>
+</head>
+
+<style>
+    body{
+        background-color: aliceblue;
+        color: black;
+        text-align: left;
+        font-weight: bolder;
+    }
+
+    h1{
+        font-weight: bold;
+        font-size: larger;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <h1>Employee Information</h1>
+    <h2>Applicants must be above 18 and below 80 years of age.</h2>
+    <h2>DISCLAIMER: By filling in the required Information below you will have consented to the terms and conditions of Crane ENT.</h2>
+
+    <form method="post" action="/">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required>
+        <label for="email">Email:</label>
+        <input type="text" name="email" required>
+        <label for="position">Position:</label>
+        <input type="text" name="position" required>
+        <label for="age">age:</label>
+        <input type="text" name="age" required>
+        <input type="submit" value="Submit">
+    </form>
+
+    <ul>
+        {% for employee in employees %}
+            <li>{{ employee.name }}: <br>Email - {{ employee.email }}, <br>Position - {{ employee.position }}, <br>Salary - ${{ employee.salary }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
